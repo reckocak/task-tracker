@@ -3,16 +3,16 @@ import Task from './Task';
 
 const Tasks = ({ tasks, onDelete, toggleDone }) => {
   return (
-    <>
+    <div>
       {tasks.map((task, index) => (
         <Task
-          key={index}
+          key={index.id}
           task={task}
           onDelete={onDelete}
           toggleDone={toggleDone}
         />
       ))}
-    </>
+    </div>
   );
 };
 

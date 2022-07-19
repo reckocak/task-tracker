@@ -1,5 +1,5 @@
 import Header from "./componenets/Header";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Tasks from "./componenets/Tasks";
 import AddTask from "./componenets/AddTask";
 
@@ -66,24 +66,20 @@ const App = () => {
   const toggleShow = () => setShowAddTask(!showAddTask);
 
   return (
-    
-      <div className="container">
-        <Header
-          onAdd={() => setShowAddTask(!showAddTask)}
-          showAdd={showAddTask}
-        />
-        
-          {showAddTask && <AddTask onAdd={addTask} />}
-          {tasks.length > 0 ? (
-          <Tasks tasks={tasks} onDelete={deleteTask} toggleDone={toggleDone}/>
-                ) : (
-                  "No Tasks To Show"
-                )
-          }
-  
-        
-      </div>
-   
+    <div className="container">
+      <Header
+        onAdd={() => setShowAddTask(!showAddTask)}
+        showAdd={showAddTask}
+        toggleShow={toggleShow}
+      />
+
+      {showAddTask && <AddTask onAdd={addTask} />}
+      {tasks.length > 0 ? (
+        <Tasks tasks={tasks} onDelete={deleteTask} toggleDone={toggleDone} />
+      ) : (
+        "No Tasks To Show"
+      )}
+    </div>
   );
 };
 

@@ -1,7 +1,7 @@
 
 
-import { useState, useEffect } from "react";
-import data from '../data'
+import { useState } from "react";
+
 
 const AddTask = ({ onAdd }) => {
   const [text, setText] = useState("");
