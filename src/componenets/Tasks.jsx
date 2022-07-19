@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Task from './Task';
 
 const Tasks = ({ tasks, onDelete, toggleDone }) => {
@@ -6,7 +6,7 @@ const Tasks = ({ tasks, onDelete, toggleDone }) => {
     <div>
       {tasks.map((task, index) => (
         <Task
-          key={index.id}
+          key={index}
           task={task}
           onDelete={onDelete}
           toggleDone={toggleDone}
